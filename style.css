@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e8c5a4; /* Backgroundcolor */
+    font-family: Arial, sans-serif;
+}
+  
+.clock {
+    position: relative;
+    width: 300px; /* Default clock size */
+    height: 300px;
+    margin: 0 auto;
+}
+  
+.outer-clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #000; /* Outline of the clock*/
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow */
+    margin: auto;
+}
+  
+.inner-clock-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    z-index: 800;
+}
+
+/* Desing and position of all the clock hands */
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 6px;
+    top: 49%;
+    background-color: #000;
+    transform-origin: 100% 50%;
+    transform: rotate(90deg);
+    transition: all 0.05s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow */
+    z-index: 100;
+}
+ 
+.hour-hand {
+    width: 40%;
+    height: 8px;
+    margin-left: 10%;
+    background-color: #333;
+}
+  
+.min-hand {
+    background-color: #555;
+}
+  
+.second-hand {
+    height: 2px;
+    background-color: red;
+}
+
+/* Time markings */
+.marking {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #000;
+}
+  
+.marking-one {
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.marking-two {
+    left: 1.5%;
+    top: 48%;
+    transform: translateY(-50%);
+    transform: rotate(90deg);
+}
+  
+.marking-three {
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.marking-four {
+    top: 48%;
+    right: 1.5%;
+    transform: translateY(-50%);
+    transform: rotate(90deg);
+}
+
+.central-dot {
+    position: absolute;
+    width: 12px; /* Diameter of the dot */
+    height: 12px;
+    background-color: black; /* Color */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+ 
+/* Info-Card for the current date*/
+.info {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    border-radius: 7px;
+    background: #ccc;
+    text-align: center;
+    line-height: 20px;
+    color: #000;
+    font-size: 11px;
+    top: 200px;
+    left: 50%;
+    margin-left: -60px;
+    font-family: "Poiret One";
+    font-weight: 700;
+    letter-spacing: 3px;
+    z-index: 0;
+} 
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .clock {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .hand {
+      height: 4px;
+    }
+  
+    .hour-hand {
+      height: 5px;
+    }
+
+    .marking {
+        width: 9px;
+        height: 9px;
+    }
+
+    .marking-two {
+        left: -0.5%;
+    }
+      
+    .marking-four {
+        right: -0.5%;
+    }
+
+    .info {
+        position: absolute;
+        width: 100px;
+        height: 17px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 17px;
+        font-size: 11px;
+        top: 140px;
+        left: 55%;
+        margin-left: -60px;
+        letter-spacing: 2px;
+    }
+}
+  
+@media (max-width: 400px) {
+    .clock {
+      width: 150px;
+      height: 150px;
+      
+    }
+  
+    .hand {
+      height: 3px;
+    }
+  
+    .hour-hand {
+      height: 4px;
+    }
+
+    .marking {
+        width: 7px;
+        height: 7px;
+    }
+
+    .info {
+        position: absolute;
+        width: 70px;
+        height: 14px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 14px;
+        font-size: 8px;
+        top: 100px;
+        left: 66.5%;
+        margin-left: -60px;
+        letter-spacing: 1px;
+    }
+
+    .outer-clock-face {
+        border: 7px solid #000;
+    }
+}
+
+  
